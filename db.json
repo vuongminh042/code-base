@@ -1,3 +1,28 @@
 {
-  "products": []
+  "products": [
+    {
+      "name": "san pham 1",
+      "price": 100,
+      "description": "mo ta san pham 1",
+      "id": 1
+    },
+    {
+      "name": "san pham 2",
+      "price": 200,
+      "description": "mo ta san pham 2",
+      "id": 2
+    },
+    {
+      "name": "san pham 3",
+      "price": 300,
+      "description": "mo ta san pham 3",
+      "id": 3
+    },
+    {
+      "name": "san pham 4",
+      "price": 400,
+      "description": "mo ta san pham 4",
+      "id": 4
+    }
+  ]
 }
