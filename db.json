@@ -1,3 +1,9 @@
 {
-  "products": []
+  "products": [
+    {
+      "name": "San pham 1",
+      "price": 100,
+      "description": "Mo ta san pham 1"
+    }
+  ]
 }
