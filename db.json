@@ -1,4 +1,39 @@
 {
-  "products": [],
-  "users": []
+  "products": [
+    {
+      "name": "san pham 1",
+      "price": 100,
+      "image": "https://picsum.photos/300/300",
+      "description": "mo ta san pham 1",
+      "id": 1
+    },
+    {
+      "name": "san pham 2",
+      "price": 200,
+      "image": "https://picsum.photos/300/300",
+      "description": "mo ta san pham 2",
+      "id": 2
+    },
+    {
+      "name": "san pham 3",
+      "price": 300,
+      "image": "https://picsum.photos/300/300",
+      "description": "mo ta san pham 3",
+      "id": 3
+    }
+  ],
+  "users": [
+    {
+      "email": "admin@gmail.com",
+      "password": "$2a$10$DYjvWwRc9iQwFe/fsKhXuODjX6qyhSM4sM2MMtIc6MWgLhlDbo3Aa",
+      "name": "admin",
+      "id": 1
+    },
+    {
+      "email": "admin1@gmail.com",
+      "password": "$2a$10$QQYmHQ4y7/1zLc57TiQ7JuCqz.pUmFm7EptLFSmxjYL5B2iM1qUo.",
+      "name": "admin1",
+      "id": 2
+    }
+  ]
 }
