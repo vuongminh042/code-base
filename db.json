@@ -1,19 +1,17 @@
 {
-  "products": [
-    {
-      "name": "San pham 1 update",
-      "price": 100,
-      "image": "https://picsum.photos/300/300",
-      "description": "mo ta san pham 1 update",
-      "id": 1
-    }
-  ],
+  "products": [],
   "users": [
     {
       "email": "admin@gmail.com",
       "password": "$2a$10$4CFbwRmnBYKV9fU7P6/fhuMO.E4QMC1gnTwwkPNO1x7t4A6C2HyBy",
       "username": "admin",
       "id": 1
+    },
+    {
+      "email": "admin2@gmail.com",
+      "password": "$2a$10$ZCmqSJl5NtjqunK2TwJDr.lpIcvZRz4m19XipzpYKNETBTVLwoTge",
+      "username": "admin2",
+      "id": 2
     }
   ]
 }
