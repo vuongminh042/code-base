@@ -8,26 +8,40 @@
       "id": 1
     },
     {
-      "name": "sanpham 2",
+      "name": "San pham 2 update",
       "price": 200,
       "image": "https://picsum.photos/300/300",
-      "description": "mo ta san pham 2",
+      "description": "mo ta san pham 2 update\n",
       "id": 2
     },
     {
-      "name": "san pham 3",
+      "name": "San pham 3 update",
       "price": 300,
       "image": "https://picsum.photos/300/300",
-      "description": "mo ta san pham 3",
+      "description": "mo ta san pham 3 update\n ",
       "id": 3
+    },
+    {
+      "name": "san pham 4",
+      "price": 400,
+      "image": "https://picsum.photos/300/300",
+      "description": "mo ta san pham 4\n",
+      "id": 4
+    },
+    {
+      "name": "san pham 5",
+      "price": 500,
+      "image": "https://picsum.photos/300/300",
+      "description": "mo ta san pham 5\n",
+      "id": 5
+    },
+    {
+      "name": "san pham 6",
+      "price": 600,
+      "image": "https://picsum.photos/300/300",
+      "description": "mo ta san pham 6\n",
+      "id": 6
     }
   ],
-  "users": [
-    {
-      "email": "vuongchiminh320@gmail.com",
-      "password": "$2a$10$AHr.7Yppu9A/wiy974.CGOxcIbcnUR6p9w2mZ3SgBgAreUOURvS8S",
-      "username": "vuongminh042",
-      "id": 1
-    }
-  ]
+  "users": []
 }
