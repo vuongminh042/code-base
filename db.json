@@ -1,47 +1,4 @@
 {
-  "products": [
-    {
-      "name": "San pham 1 update",
-      "price": 100,
-      "image": "https://picsum.photos/300/300",
-      "description": "mo ta san pham 1 update",
-      "id": 1
-    },
-    {
-      "name": "San pham 2 update",
-      "price": 200,
-      "image": "https://picsum.photos/300/300",
-      "description": "mo ta san pham 2 update\n",
-      "id": 2
-    },
-    {
-      "name": "San pham 3 update",
-      "price": 300,
-      "image": "https://picsum.photos/300/300",
-      "description": "mo ta san pham 3 update\n ",
-      "id": 3
-    },
-    {
-      "name": "san pham 4",
-      "price": 400,
-      "image": "https://picsum.photos/300/300",
-      "description": "mo ta san pham 4\n",
-      "id": 4
-    },
-    {
-      "name": "san pham 5",
-      "price": 500,
-      "image": "https://picsum.photos/300/300",
-      "description": "mo ta san pham 5\n",
-      "id": 5
-    },
-    {
-      "name": "san pham 6",
-      "price": 600,
-      "image": "https://picsum.photos/300/300",
-      "description": "mo ta san pham 6\n",
-      "id": 6
-    }
-  ],
+  "products": [],
   "users": []
 }
