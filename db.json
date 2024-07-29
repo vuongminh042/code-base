@@ -1,4 +1,12 @@
 {
   "products": [],
-  "users": []
+  "users": [
+    {
+      "email": "vuongchiminh320@gmail.com",
+      "password": "$2a$10$39ulalgCsmH0x4MweLlthuy5nLpQMn0K8cKhdK.RxFVkwlLCIcAQO",
+      "username": "vuongminh042",
+      "confirmPassword": "minh2004@1234",
+      "id": 1
+    }
+  ]
 }

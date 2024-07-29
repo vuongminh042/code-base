@@ -13,7 +13,6 @@ type TProduct = {
 
 const ProductList = () => {
     const queryClient = useQueryClient()
-
     const { data } = useQuery({
         queryKey: ['products'],
         queryFn: async () => {
@@ -46,13 +45,13 @@ const ProductList = () => {
 
     return (
         <div>
-            <Link to='/signup' className="btn btn-warning">Sign Up</Link>
+            <Link to="/signup" className="btn btn-warning">Sign Up</Link>
             <h1>Product List</h1>
-            <Link to='/products/add' className="btn btn-primary">Add</Link>
+            <Link to="/products/add" className="btn btn-primary">Add</Link>
             <table className="table table-bordered mt-4">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
+                        <th scope="col">STT</th>
                         <th scope="col">Name</th>
                         <th scope="col">Price</th>
                         <th scope="col">Image</th>

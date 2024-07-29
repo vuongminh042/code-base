@@ -27,10 +27,10 @@ const ProductAdd = () => {
     const { register, handleSubmit, formState: { errors } } = useForm<FormData>({
         resolver: joiResolver(productSchema),
         defaultValues: {
-            name: '',
+            name: "",
             price: 0,
-            image: '',
-            description: ''
+            image: "",
+            description: ""
         }
     })
 
@@ -51,7 +51,6 @@ const ProductAdd = () => {
     const onSubmit = (formData: FormData) => {
         mutation.mutate(formData);
     }
-
 
     return (
         <div>

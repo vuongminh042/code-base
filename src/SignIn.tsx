@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import { Button, Form, FormProps, Input, message } from 'antd';
 import { Link } from 'react-router-dom';
@@ -13,16 +11,16 @@ type FormData = {
 const onFinish: FormProps<FormData>['onFinish'] = async (user) => {
     try {
         const response = await axios.post('http://localhost:3000/signin', user)
-        message.success('Sign In Successful')
+        message.success('Sign in successful')
         return response.data
     } catch (error) {
         console.error(error);
-        message.error('Sign In Failed')
+        message.error('Sign in failed')
     }
 }
 
-const onFinishFailed: FormProps<FormData>['onFinishFailed'] = (errorInfo) => {
-    console.log('Failed', errorInfo);
+const onFinishFailed: FormProps<FormData>['onFinishFailed'] = (error) => {
+    console.log('Failed', error);
 }
 
 const SignIn: React.FC = () => (
@@ -38,7 +36,6 @@ const SignIn: React.FC = () => (
             onFinishFailed={onFinishFailed}
             autoComplete="off"
         >
-
             <Form.Item<FormData>
                 label="Email"
                 name="email"

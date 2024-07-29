@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import { Button, Form, FormProps, Input, message } from 'antd';
 import { Link } from 'react-router-dom';
@@ -9,21 +7,22 @@ type FormData = {
     username?: string;
     email?: string;
     password?: string;
+    confirmPassword?: string
 };
 
 const onFinish: FormProps<FormData>['onFinish'] = async (user) => {
     try {
         const response = await axios.post('http://localhost:3000/signup', user)
-        message.success('Sign Up Successful')
+        message.success('Sign up successful')
         return response.data
     } catch (error) {
         console.error(error);
-        message.error('Sign Up Failed')
+        message.error('Sign up failed')
     }
 }
 
-const onFinishFailed: FormProps<FormData>['onFinishFailed'] = (errorInfo) => {
-    console.log('Failed', errorInfo);
+const onFinishFailed: FormProps<FormData>['onFinishFailed'] = (error) => {
+    console.log('Failed', error);
 }
 
 const SignUp: React.FC = () => (
@@ -59,6 +58,14 @@ const SignUp: React.FC = () => (
                 label="Password"
                 name="password"
                 rules={[{ required: true, message: 'Please input your password!' }]}
+            >
+                <Input.Password />
+            </Form.Item>
+
+            <Form.Item<FormData>
+                label="confimPassword"
+                name="confirmPassword"
+                rules={[{ required: true, message: 'Please input your confirm password!' }]}
             >
                 <Input.Password />
             </Form.Item>
