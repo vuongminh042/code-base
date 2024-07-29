@@ -1,12 +1,53 @@
 {
-  "products": [],
+  "products": [
+    {
+      "name": "sanpham 1 update",
+      "price": 100,
+      "image": "https://picsum.photos/200/200",
+      "description": "mo ta san pham 1 update",
+      "id": 1
+    },
+    {
+      "name": "sanpham 2 update",
+      "price": 200,
+      "image": "https://picsum.photos/200/200",
+      "description": "mo ta san pham 2 update",
+      "id": 2
+    },
+    {
+      "name": "sanpham 3",
+      "price": 300,
+      "image": "https://picsum.photos/200/200",
+      "description": "mo ta san pham 3",
+      "id": 3
+    },
+    {
+      "name": "sanpham 4",
+      "price": 400,
+      "image": "https://picsum.photos/200/200",
+      "description": "mo ta san pham 4",
+      "id": 4
+    },
+    {
+      "name": "sanpham 5",
+      "price": 500,
+      "image": "https://picsum.photos/200/200",
+      "description": "mo ta san pham 5",
+      "id": 5
+    }
+  ],
   "users": [
     {
-      "email": "vuongchiminh320@gmail.com",
-      "password": "$2a$10$39ulalgCsmH0x4MweLlthuy5nLpQMn0K8cKhdK.RxFVkwlLCIcAQO",
-      "username": "vuongminh042",
-      "confirmPassword": "minh2004@1234",
+      "email": "admin@gmail.com",
+      "password": "$2a$10$jmRO5g/KAfEiAkQD5S55G.UK66QxP6AKJ3i54FWOMvszAevF.QGFi",
+      "username": "admin",
       "id": 1
+    },
+    {
+      "email": "admin2@gmail.com",
+      "password": "$2a$10$lOU/bmf2L.93YeVLNTo.mOtHL575TcmJBAFFpZPrpR67HjSob7q0y",
+      "username": "admin2",
+      "id": 2
     }
   ]
 }
