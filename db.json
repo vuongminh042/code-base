@@ -1,4 +1,17 @@
 {
   "products": [],
-  "users": []
+  "users": [
+    {
+      "email": "minhvcph33333@fpt.edu.vn",
+      "password": "$2a$10$fwBe98wxE1f2gFw2/t1C4eydsraO8ZluH3.hGFoc0WQ4ajrpRZyA6",
+      "username": "Vương Chí Minh",
+      "id": 1
+    },
+    {
+      "email": "admin1@gmail.com",
+      "password": "$2a$10$n9qeK3PlczgX1k6NRLNBlOc2SBLkYEEx8CYC4YZozuwOaK41QoRqm",
+      "username": "admin1",
+      "id": 2
+    }
+  ]
 }

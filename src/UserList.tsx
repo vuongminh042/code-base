@@ -3,21 +3,20 @@ import { message } from "antd"
 import axios from "axios"
 import { Link } from "react-router-dom"
 
-type TProduct = {
+type User = {
     id?: number,
-    name: string,
-    price: number,
-    image: string,
-    description: string
+    username: string,
+    email: string
 }
 
-const ProductList = () => {
+const UserList = () => {
     const queryClient = useQueryClient()
+
     const { data, isLoading, error } = useQuery({
-        queryKey: ['products'],
+        queryKey: ['users'],
         queryFn: async () => {
             try {
-                const response = await axios.get('http://localhost:3000/products')
+                const response = await axios.get("http://localhost:3000/users")
                 return response.data
             } catch (error) {
                 console.error(error);
@@ -29,13 +28,13 @@ const ProductList = () => {
         mutationFn: async (id: number) => {
             const confirm = window.confirm('Do you want delete ?')
             if (confirm) {
-                await axios.delete(`http://localhost:3000/products/${id}`)
+                await axios.delete(`http://localhost:3000/users/${id}`)
                 message.success('Delete Successful')
             }
         },
         onSuccess: () => {
             queryClient.invalidateQueries({
-                queryKey: ['products']
+                queryKey: ['users']
             })
         },
         onError: (error) => {
@@ -48,34 +47,26 @@ const ProductList = () => {
 
     return (
         <div>
+            <h1>User List</h1>
             <Link to='/signup' className="btn btn-warning">Sign Up</Link>
-            <h1>Product List</h1>
-            <Link to='/products/add' className="btn btn-primary">Add</Link>
             <table className="table table-bordered mt-4">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Image</th>
-                        <th scope="col">Description</th>
+                        <th scope="col">Username</th>
+                        <th scope="col">Email</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {data?.map((product: TProduct, index: number) => {
+                    {data?.map((user: User, index: number) => {
                         return (
                             <tr key={index}>
                                 <td scope="col">{index + 1}</td>
-                                <td scope="col">{product.name}</td>
-                                <td scope="col">{product.price}</td>
+                                <td scope="col">{user.username}</td>
+                                <td scope="col">{user.email}</td>
                                 <td scope="col">
-                                    <img src={product.image} alt={product.name} width={60} />
-                                </td>
-                                <td scope="col">{product.description}</td>
-                                <td scope="col">
-                                    <Link to={`/products/${product.id}/edit`} className="btn btn-primary">Edit</Link>
-                                    <button className="btn btn-danger" onClick={() => mutation.mutate(product.id!)}>Delete</button>
+                                    <button className="btn btn-danger" onClick={() => mutation.mutate(user.id!)}>Delete</button>
                                 </td>
                             </tr>
                         )
@@ -87,4 +78,4 @@ const ProductList = () => {
     )
 }
 
-export default ProductList
+export default UserList
