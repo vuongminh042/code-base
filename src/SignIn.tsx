@@ -34,13 +34,15 @@ const SignIn: React.FC = () => (
         onFinishFailed={onFinishFailed}
         autoComplete="off"
     >
+
         <Form.Item<FormData>
             label="Email"
             name="email"
-            rules={[{ required: true, message: 'Please input your username!' }]}
+            rules={[{ required: true, message: 'Please input your email!' }]}
         >
             <Input />
         </Form.Item>
+
 
         <Form.Item<FormData>
             label="Password"

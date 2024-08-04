@@ -36,19 +36,20 @@ const ProductList = () => {
         },
         onSuccess: () => {
             queryClient.invalidateQueries({
-                queryKey: ['products'],
+                queryKey: ['products']
             })
         },
         onError: (error) => {
-            message.error('Delete Failed' + error.message)
+            message.error('Delete failed' + error.message)
         }
     })
 
-    if (isLoading) return <div>Loading...</div>
+    if (isLoading) return <div>Loading....</div>
     if (isError) return <div>Error</div>
 
     return (
         <div>
+            <Link to='/signup' className="btn btn-warning">Sign Up</Link>
             <h1>Product List</h1>
             <Link to='/products/add' className="btn btn-primary">Add</Link>
             <table className="table table-bordered mt-4">
@@ -70,7 +71,7 @@ const ProductList = () => {
                                 <td scope="col">{product.name}</td>
                                 <td scope="col">{product.price}</td>
                                 <td scope="col">
-                                    <img src={product.image} alt={product.name} width={60} />
+                                    <img src={product.image} alt={product.name} width={70} />
                                 </td>
                                 <td scope="col">{product.description}</td>
                                 <td scope="col">
