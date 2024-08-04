@@ -1,17 +1,26 @@
 {
-  "products": [],
-  "users": [
+  "products": [
     {
-      "email": "minhvcph33333@fpt.edu.vn",
-      "password": "$2a$10$fwBe98wxE1f2gFw2/t1C4eydsraO8ZluH3.hGFoc0WQ4ajrpRZyA6",
-      "username": "Vương Chí Minh",
+      "name": "sanpham 1 update",
+      "price": 100,
+      "image": "https://picsum.photos/200/200",
+      "description": "mo ta san pham 1 update",
       "id": 1
     },
     {
-      "email": "admin1@gmail.com",
-      "password": "$2a$10$n9qeK3PlczgX1k6NRLNBlOc2SBLkYEEx8CYC4YZozuwOaK41QoRqm",
-      "username": "admin1",
+      "name": "sanpham 2 update",
+      "price": 200,
+      "image": "https://picsum.photos/200/200",
+      "description": "mo ta san pham 2 update",
       "id": 2
+    }
+  ],
+  "users": [
+    {
+      "email": "admin1@gmail.com",
+      "password": "$2a$10$xKA4roTOG0aV2ngQZaGFC..iVT5IIXJHOXHYXTvK7/ESPHmoba3oy",
+      "username": "admin1",
+      "id": 1
     }
   ]
 }

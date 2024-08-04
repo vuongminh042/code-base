@@ -34,13 +34,9 @@ const ProductAdd = () => {
         }
     })
 
-    const onSubmit = (formData: FormData) => {
-        mutation.mutate(formData)
-    }
-
     const mutation = useMutation({
         mutationFn: async (formData: FormData) => {
-            const response = await axios.post('http://localhost:3000/products', formData)
+            const response = await axios.post("http://localhost:3000/products", formData)
             return response.data
         },
         onSuccess: () => {
@@ -51,6 +47,10 @@ const ProductAdd = () => {
             message.error('Add Failed' + error.message)
         }
     })
+
+    const onSubmit = (formData: FormData) => {
+        mutation.mutate(formData);
+    }
 
     return (
         <div>
@@ -63,7 +63,7 @@ const ProductAdd = () => {
                 </div>
                 <div className="mb-3">
                     <label htmlFor="price" className="form-label">Price</label>
-                    <input type="number" className="form-control" id="price" {...register('price', { required: true })} />
+                    <input type="text" className="form-control" id="price" {...register('price', { required: true })} />
                     {errors?.price && <div id="price" className="form-text text-danger">{errors?.price?.message}</div>}
                 </div>
                 <div className="mb-3">
@@ -76,6 +76,7 @@ const ProductAdd = () => {
                 </div>
                 <button type="submit" className="btn btn-primary">Submit</button>
             </form>
+
         </div>
     )
 }

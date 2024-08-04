@@ -13,7 +13,8 @@ type TProduct = {
 
 const ProductList = () => {
     const queryClient = useQueryClient()
-    const { data, isLoading, error } = useQuery({
+
+    const { data, isLoading, isError } = useQuery({
         queryKey: ['products'],
         queryFn: async () => {
             try {
@@ -35,7 +36,7 @@ const ProductList = () => {
         },
         onSuccess: () => {
             queryClient.invalidateQueries({
-                queryKey: ['products']
+                queryKey: ['products'],
             })
         },
         onError: (error) => {
@@ -44,11 +45,10 @@ const ProductList = () => {
     })
 
     if (isLoading) return <div>Loading...</div>
-    if (error) return <div>Error</div>
+    if (isError) return <div>Error</div>
 
     return (
         <div>
-            <Link to='/signup' className="btn btn-warning">Sign Up</Link>
             <h1>Product List</h1>
             <Link to='/products/add' className="btn btn-primary">Add</Link>
             <table className="table table-bordered mt-4">

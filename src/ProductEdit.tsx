@@ -51,10 +51,6 @@ const ProductEdit = () => {
         }
     })
 
-    const onSubmit = (formData: FormData) => {
-        mutation.mutate(formData)
-    }
-
     const mutation = useMutation({
         mutationFn: async (formData: FormData) => {
             const response = await axios.put(`http://localhost:3000/products/${formData.id}`, formData)
@@ -69,6 +65,10 @@ const ProductEdit = () => {
         }
     })
 
+    const onSubmit = (formData: FormData) => {
+        mutation.mutate(formData);
+    }
+
     return (
         <div>
             <h1>Product Edit</h1>
@@ -80,7 +80,7 @@ const ProductEdit = () => {
                 </div>
                 <div className="mb-3">
                     <label htmlFor="price" className="form-label">Price</label>
-                    <input type="number" className="form-control" id="price" {...register('price', { required: true })} />
+                    <input type="text" className="form-control" id="price" {...register('price', { required: true })} />
                     {errors?.price && <div id="price" className="form-text text-danger">{errors?.price?.message}</div>}
                 </div>
                 <div className="mb-3">
@@ -93,6 +93,7 @@ const ProductEdit = () => {
                 </div>
                 <button type="submit" className="btn btn-primary">Submit</button>
             </form>
+
         </div>
     )
 }

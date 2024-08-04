@@ -5,7 +5,6 @@ import ProductAdd from "./ProductAdd"
 import ProductEdit from "./ProductEdit"
 import SignUp from "./SignUp"
 import SignIn from "./SignIn"
-import UserList from "./UserList"
 
 function App() {
   return (
@@ -17,7 +16,6 @@ function App() {
           <Route path="products/:id/edit" element={<ProductEdit />} />
           <Route path="signup" element={<SignUp />} />
           <Route path="signin" element={<SignIn />} />
-          <Route path="users" element={<UserList />} />
         </Route>
       </Routes>
     </div>

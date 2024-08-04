@@ -4,7 +4,7 @@ import type { MenuProps } from 'antd';
 import { Breadcrumb, Layout, Menu, theme } from 'antd';
 import { Outlet } from 'react-router-dom';
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Header, Content, Sider } = Layout;
 
 const items1: MenuProps['items'] = ['1', '2', '3'].map((key) => ({
     key,
@@ -28,14 +28,8 @@ const items2: MenuProps['items'] = [UserOutlined, LaptopOutlined, NotificationOu
                 };
             }),
         };
-    }
+    },
 );
-
-const breadcrumbItems = [
-    { title: 'Home', href: '/' },
-    { title: 'List', href: '/list' },
-    { title: 'App', href: '/app' },
-];
 
 const CustomLayout: React.FC = () => {
     const {
@@ -54,28 +48,35 @@ const CustomLayout: React.FC = () => {
                     style={{ flex: 1, minWidth: 0 }}
                 />
             </Header>
-            <Content style={{ padding: '0 48px' }}>
-                <Breadcrumb style={{ margin: '16px 0' }} items={breadcrumbItems} />
-                <Layout
-                    style={{ padding: '24px 0', background: colorBgContainer, borderRadius: borderRadiusLG }}
-                >
-                    <Sider style={{ background: colorBgContainer }} width={200}>
-                        <Menu
-                            mode="inline"
-                            defaultSelectedKeys={['1']}
-                            defaultOpenKeys={['sub1']}
-                            style={{ height: '100%' }}
-                            items={items2}
-                        />
-                    </Sider>
-                    <Content style={{ padding: '0 24px', minHeight: 280 }}>
+            <Layout>
+                <Sider width={200} style={{ background: colorBgContainer }}>
+                    <Menu
+                        mode="inline"
+                        defaultSelectedKeys={['1']}
+                        defaultOpenKeys={['sub1']}
+                        style={{ height: '100%', borderRight: 0 }}
+                        items={items2}
+                    />
+                </Sider>
+                <Layout style={{ padding: '0 24px 24px' }}>
+                    <Breadcrumb style={{ margin: '16px 0' }}>
+                        <Breadcrumb.Item>Home</Breadcrumb.Item>
+                        <Breadcrumb.Item>List</Breadcrumb.Item>
+                        <Breadcrumb.Item>App</Breadcrumb.Item>
+                    </Breadcrumb>
+                    <Content
+                        style={{
+                            padding: 24,
+                            margin: 0,
+                            minHeight: 280,
+                            background: colorBgContainer,
+                            borderRadius: borderRadiusLG,
+                        }}
+                    >
                         <Outlet />
                     </Content>
                 </Layout>
-            </Content>
-            <Footer style={{ textAlign: 'center' }}>
-                Ant Design ©{new Date().getFullYear()} Created by Ant UED
-            </Footer>
+            </Layout>
         </Layout>
     );
 };
