@@ -22,6 +22,7 @@ const ProductList = () => {
                 return response.data
             } catch (error) {
                 console.error(error);
+                // message.error('Không có dữ liệu nào được hiển thị')
             }
         }
     })
@@ -31,7 +32,7 @@ const ProductList = () => {
             const confirm = window.confirm('Do you want delete ?')
             if (confirm) {
                 await axios.delete(`http://localhost:3000/products/${id}`)
-                message.success('Delete Successful')
+                message.success('Delete successful')
             }
         },
         onSuccess: () => {
@@ -40,11 +41,11 @@ const ProductList = () => {
             })
         },
         onError: (error) => {
-            message.error('Delete failed' + error.message)
+            message.error('Delete Failed' + error.message)
         }
     })
 
-    if (isLoading) return <div>Loading....</div>
+    if (isLoading) return <div>Loading...</div>
     if (isError) return <div>Error</div>
 
     return (

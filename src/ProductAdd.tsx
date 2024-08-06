@@ -18,8 +18,8 @@ const productSchema = Joi.object({
     price: Joi.number().required().positive().messages({
         "number.base": "Must be a number"
     }),
-    image: Joi.string().required(),
-    description: Joi.string().required()
+    image: Joi.string(),
+    description: Joi.string()
 })
 
 const ProductAdd = () => {
@@ -58,7 +58,7 @@ const ProductAdd = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="mb-3">
                     <label htmlFor="name" className="form-label">Name</label>
-                    <input type="text" className="form-control" id="name" {...register('name', { required: true })} />
+                    <input type="text" className="form-control" id="name" {...register('name', { required: true, minLength: 3 })} />
                     {errors?.name && <div id="name" className="form-text text-danger">{errors?.name?.message}</div>}
                 </div>
                 <div className="mb-3">
@@ -69,12 +69,10 @@ const ProductAdd = () => {
                 <div className="mb-3">
                     <label htmlFor="image" className="form-label">Image</label>
                     <input type="text" className="form-control" id="image" {...register('image')} />
-                    {errors?.image && <div id="image" className="form-text text-danger">{errors?.image?.message}</div>}
                 </div>
                 <div className="mb-3">
                     <label htmlFor="description" className="form-label">Description</label>
                     <textarea id="description" className="form-control" {...register('description')}></textarea>
-                    {errors?.description && <div id="description" className="form-text text-danger">{errors?.description?.message}</div>}
                 </div>
                 <button type="submit" className="btn btn-primary">Submit</button>
             </form>

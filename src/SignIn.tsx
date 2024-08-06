@@ -3,15 +3,16 @@ import axios from 'axios';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-type FormData = {
+type FieldType = {
     email?: string;
     password?: string;
 };
 
 const onFinish: FormProps<FormData>['onFinish'] = async (user) => {
     try {
-        const response = await axios.post("http://localhost:3000/signin", user)
+        const response = await axios.post('http://localhost:3000/signin', user)
         message.success('Sign in successful')
+        localStorage.setItem('user', JSON.stringify(response.data))
         return response.data
     } catch (error) {
         console.error(error);
@@ -35,7 +36,7 @@ const SignIn: React.FC = () => (
         autoComplete="off"
     >
 
-        <Form.Item<FormData>
+        <Form.Item<FieldType>
             label="Email"
             name="email"
             rules={[{ required: true, message: 'Please input your email!' }]}
@@ -43,8 +44,7 @@ const SignIn: React.FC = () => (
             <Input />
         </Form.Item>
 
-
-        <Form.Item<FormData>
+        <Form.Item<FieldType>
             label="Password"
             name="password"
             rules={[{ required: true, message: 'Please input your password!' }]}

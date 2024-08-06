@@ -1,16 +1,17 @@
 import { Route, Routes } from "react-router-dom"
 import CustomLayout from "./Layout"
 import ProductList from "./ProductList"
-import SignUp from "./SignUp"
-import SignIn from "./SignIn"
 import ProductAdd from "./ProductAdd"
 import ProductEdit from "./ProductEdit"
+import SignUp from "./SignUp"
+import SignIn from "./SignIn"
+import Provider from "./Provider"
 
 function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<CustomLayout />}>
+        <Route path="/" element={<Provider><CustomLayout /></Provider>}>
           <Route path="products" element={<ProductList />} />
           <Route path="products/add" element={<ProductAdd />} />
           <Route path="products/:id/edit" element={<ProductEdit />} />
