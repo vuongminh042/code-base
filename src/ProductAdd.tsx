@@ -22,6 +22,7 @@ const productSchema = Joi.object({
     description: Joi.string()
 })
 
+
 const ProductAdd = () => {
     const navigate = useNavigate()
     const { register, handleSubmit, formState: { errors } } = useForm<FormData>({

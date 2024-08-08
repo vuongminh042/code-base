@@ -24,6 +24,7 @@ const productSchema = Joi.object({
     description: Joi.string()
 })
 
+
 const ProductEdit = () => {
     const { id } = useParams()
     const navigate = useNavigate()

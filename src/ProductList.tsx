@@ -3,6 +3,7 @@ import { message } from "antd"
 import axios from "axios"
 import { Link } from "react-router-dom"
 
+
 type TProduct = {
     id?: number,
     name: string,
@@ -22,7 +23,7 @@ const ProductList = () => {
                 return response.data
             } catch (error) {
                 console.error(error);
-                // message.error('Không có dữ liệu nào được hiển thị')
+                message.error('No data')
             }
         }
     })
@@ -32,12 +33,12 @@ const ProductList = () => {
             const confirm = window.confirm('Do you want delete ?')
             if (confirm) {
                 await axios.delete(`http://localhost:3000/products/${id}`)
-                message.success('Delete successful')
+                message.success('Delete Successful')
             }
         },
         onSuccess: () => {
             queryClient.invalidateQueries({
-                queryKey: ['products']
+                queryKey: ['products'],
             })
         },
         onError: (error) => {

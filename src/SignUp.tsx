@@ -51,6 +51,7 @@ const SignUp: React.FC = () => (
             <Input />
         </Form.Item>
 
+
         <Form.Item<FieldType>
             label="Password"
             name="password"
@@ -63,7 +64,7 @@ const SignUp: React.FC = () => (
             <Button type="primary" htmlType="submit">
                 Submit
             </Button>
-            <Link to='/signin' type="primary">
+            <Link to='/signin' type="primary" >
                 Sign In
             </Link>
         </Form.Item>
